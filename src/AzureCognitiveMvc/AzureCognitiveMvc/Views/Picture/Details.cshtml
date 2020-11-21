@@ -1,0 +1,59 @@
+﻿@model AzureCognitiveMvc.Models.PictureModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Picture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Storage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Storage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Result)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Result)
+        </dd>
+    </dl>
+</div>
+
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PictureId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<div>
+    <img src="@ViewBag.ImageUrl" width="400" />
+    <div style="color:#FFF;background-color:#000">
+        @ViewBag.features
+    </div>
+
+</div>

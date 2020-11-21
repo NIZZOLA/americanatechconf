@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AzureCognitiveMvc.Models.PictureModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Página principal</h2>
+<p>User: @ViewBag.UniqueId </p>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PictureId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Storage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PictureId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Storage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                <a asp-action="Play" asp-route-id="@item.PictureId">Play</a> |
+                <a asp-action="Delete" asp-route-id="@item.PictureId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
